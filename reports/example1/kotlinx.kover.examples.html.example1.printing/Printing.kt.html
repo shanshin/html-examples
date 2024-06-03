@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Printing.kt</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">example1</a> &gt; <a href="index.source.html" class="el_package">kotlinx.kover.examples.html.example1.printing</a> &gt; <span class="el_source">Printing.kt</span></div><h1>Printing.kt</h1><pre class="source lang-java linenums">package kotlinx.kover.examples.html.example1.printing
+
+import kotlinx.kover.examples.html.example1.AbstractGreeter
+import kotlinx.kover.examples.html.example1.HelloClass
+import kotlinx.kover.examples.html.example1.formatter.GreetingFormatter
+
+<span class="fc" id="L7">class Printing {</span>
+    companion object {
+        fun classLabel(): String {
+<span class="fc" id="L10">            return &quot;Subclass&quot;</span>
+        }
+    }
+
+    private fun printText(block: () -&gt; String) {
+<span class="fc" id="L15">        println(&quot;Printer '${classLabel()}'${PrintingUtility().tab}${block()}&quot;)</span>
+<span class="fc" id="L16">    }</span>
+
+    fun doPrint(greeter: AbstractGreeter) {
+<span class="fc" id="L19">        printText {</span>
+<span class="fc" id="L20">            GreetingFormatter.format(greeter.greet(), greeter.id)</span>
+        }
+<span class="fc" id="L22">    }</span>
+
+}
+
+<span class="fc" id="L26">class PrintingUtility {</span>
+<span class="fc" id="L27">    val tab: Char get() = '\t'</span>
+
+    fun unused() {
+<span class="nc" id="L30">        println(&quot;unused function&quot;)</span>
+<span class="nc" id="L31">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
